@@ -46,6 +46,10 @@ namespace CapaPresentacion
                 else
                 {
                     MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    userTextBox.Clear();
+                    pwdTextBox.Clear();
+
+                    userTextBox.Focus();
                 }
             }
             catch (Exception)
@@ -59,6 +63,18 @@ namespace CapaPresentacion
             }
 
 
+
+        }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            userTextBox.Clear();
+            pwdTextBox.Clear();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

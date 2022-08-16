@@ -12,7 +12,7 @@ namespace CapaPresentacion
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form2());
-            Application.Run(new Form3());
+            Application.Run(new LoginForm());
             Application.Run(new Form1());
         }
     }
