@@ -29,7 +29,7 @@ namespace CapaPresentacion
 
             try
             {
-                String query = "SELECT UserNameEntidad, PassworEntidad FROM Entidades WHERE username = '" + userUsername + "' AND PasswordEntidad = '" + userPassword + "'";
+                String query = "SELECT UserNameEntidad, PassworEntidad FROM Entidades WHERE UserNameEntidad = '" + userUsername + "' AND PassworEntidad = '" + userPassword + "'";
                 SqlDataAdapter sda = new SqlDataAdapter(query, conn);
 
                 DataTable dtable = new DataTable();
@@ -40,7 +40,6 @@ namespace CapaPresentacion
                     userUsername = userTextBox.Text;
                     userPassword = pwdTextBox.Text;
 
-                    Form1 mainPage = new Form1();
                     this.Close();
                 }
                 else
@@ -52,10 +51,10 @@ namespace CapaPresentacion
                     userTextBox.Focus();
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
 
-                MessageBox.Show("Error");
+                MessageBox.Show("Error"+ err);
             }
             finally
             {
@@ -73,8 +72,13 @@ namespace CapaPresentacion
         }
 
         private void exitButton_Click(object sender, EventArgs e)
+        { 
+          Application.Exit();  
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }
