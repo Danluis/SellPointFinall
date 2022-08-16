@@ -34,8 +34,7 @@ namespace CapaPresentacion
             {
                 timer1.Enabled = false;
                 Form1 second_form = new Form1();
-                this.Hide();
-                second_form.Show();
+                this.Close();
             }
         }
     }
